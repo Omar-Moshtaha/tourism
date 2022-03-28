@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tourism/page1.dart';
 import 'package:tourism/register.dart';
+import 'package:tourism/success_page.dart';
 
 void main(){
   runApp(MyApp());
@@ -27,7 +28,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home: Register(),
+  home: Success(),
 );
   }
 
