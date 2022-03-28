@@ -12,7 +12,7 @@ class _Page1State extends State<Page1> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // navigate();
+    navigate();
   }
   navigate()async{
     await Future.delayed(Duration(milliseconds: 3000),(){});
