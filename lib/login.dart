@@ -3,11 +3,15 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Login extends StatelessWidget {
-
+var scaffold_key=GlobalKey<ScaffoldState>();
+double stackHeight = double.infinity- 105;
+double stackWidth = double.infinity;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      key:scaffold_key ,
+      backgroundColor: HexColor('#FCFCFF'),
       appBar: AppBar(
         toolbarHeight:100,
         centerTitle: true,
@@ -37,6 +41,7 @@ flexibleSpace: ClipPath(
 ),
 
       ),
+
       body: Container(
         height: double.infinity,
         child: Stack(
@@ -146,11 +151,39 @@ suffixIcon: Padding(
 
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30),
-                      child: Text("Forgot Password ?",style: TextStyle(
+                      child: GestureDetector(
+                        onTap: () {
+                          scaffold_key.currentState!.showBottomSheet((context) => Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 180,left: 180,bottom: 320),
+                              child: Container(
+
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                   color: Colors.black,
+
+                                ),
+                              ),
+                            ),
+                            height: 350.5,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: HexColor('#FCFCFF'),
+borderRadius: BorderRadius.only(topLeft:Radius.circular(30) ,topRight: Radius.circular(30)),
+boxShadow: [
+  BoxShadow(color:HexColor('#979797').withOpacity(0.5),spreadRadius: 2,blurRadius: 2, offset: Offset(0,0))
+
+
+                              ]
+                            ),
+                          ));
+                        },
+                        child: Text("Forgot Password ?",style: TextStyle(
   color: HexColor('#606060'),
   fontSize: 16,
   letterSpacing: 1.5
 ),),
+                      ),
                     ),
                   ),
               GestureDetector(
@@ -233,7 +266,7 @@ var h=size.height;
     var w=size.width;
     final path=Path();
     path.lineTo(0, h-80);
-    path.quadraticBezierTo(w/2, h+80, w, h-80);
+    path.quadraticBezierTo(w/2, h+90, w, h-20);
     path.lineTo(w, 0);
 path.close();
 return path;
@@ -246,4 +279,31 @@ return path;
 return true;
   }
 
+}
+class CommomContainer extends CustomClipper<Path> {
+  CommomContainer({required this.holeRadius});
+
+  final double holeRadius;
+
+  @override
+  Path getClip(Size size) {
+    final path = Path()
+      ..moveTo(0, 0)
+      ..lineTo(size.width / 2 - holeRadius - 10, 0.0)
+      ..quadraticBezierTo(
+          size.width / 2 - holeRadius, 0.0, size.width / 2 - holeRadius, 10.0)
+      ..arcToPoint(
+        Offset(size.width / 2 + holeRadius, 0.0),
+        clockwise: false,
+        radius: Radius.circular(2),
+      )
+      ..lineTo(size.width, 0.0)
+      ..lineTo(size.width, size.height);
+    path.lineTo(0.0, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CommomContainer oldClipper) => true;
 }
