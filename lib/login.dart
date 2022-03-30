@@ -2,10 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class Login extends StatelessWidget {
-var scaffold_key=GlobalKey<ScaffoldState>();
-double stackHeight = double.infinity- 105;
-double stackWidth = double.infinity;
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  var scaffold_key=GlobalKey<ScaffoldState>();
+
+var opcity=true;
+
   @override
   Widget build(BuildContext context) {
 
@@ -153,30 +164,46 @@ suffixIcon: Padding(
                       padding: const EdgeInsets.only(top: 30),
                       child: GestureDetector(
                         onTap: () {
+                          setState(() {
+                            opcity=!opcity;
+                          });
                           scaffold_key.currentState!.showBottomSheet((context) => Container(
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 180,left: 180,bottom: 320),
-                              child: Container(
-
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                   color: Colors.black,
-
-                                ),
-                              ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  height: 378.5,
+                                  width: double.infinity,
+                                  color: Colors.black,
+                                )
+                              ],
                             ),
-                            height: 350.5,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: HexColor('#FCFCFF'),
-borderRadius: BorderRadius.only(topLeft:Radius.circular(30) ,topRight: Radius.circular(30)),
-boxShadow: [
-  BoxShadow(color:HexColor('#979797').withOpacity(0.5),spreadRadius: 2,blurRadius: 2, offset: Offset(0,0))
 
-
-                              ]
-                            ),
                           ));
+//                           scaffold_key.currentState!.showBottomSheet((context) => Container(
+//                             child: Padding(
+//                               padding: const EdgeInsets.only(right: 180,left: 180,bottom: 320),
+//                               child: Container(
+//
+//                                 decoration: BoxDecoration(
+//                                   shape: BoxShape.circle,
+//                                    color: Colors.black,
+//
+//                                 ),
+//                               ),
+//                             ),
+//                             height: 350.5,
+//                             width: double.infinity,
+//                             decoration: BoxDecoration(
+//                               color: HexColor('#FCFCFF'),
+// borderRadius: BorderRadius.only(topLeft:Radius.circular(30) ,topRight: Radius.circular(30)),
+// boxShadow: [
+//   BoxShadow(color:HexColor('#979797').withOpacity(0.5),spreadRadius: 2,blurRadius: 2, offset: Offset(0,0))
+//
+//
+//                               ]
+//                             ),
+//                           ));
                         },
                         child: Text("Forgot Password ?",style: TextStyle(
   color: HexColor('#606060'),
@@ -256,6 +283,21 @@ Text('Customer ',style: TextStyle(
           ],
         ),
       ),
+ floatingActionButton: Opacity(
+   opacity: opcity?0:1,
+   child: Center(
+     child: Padding(
+       padding: const EdgeInsets.only(top: 70,left: 30),
+       child: CircleAvatar(
+         backgroundColor: Colors.white,
+         radius: 22,
+         child: FloatingActionButton(mini: true,onPressed: () {
+
+         },),
+       ),
+     ),
+   ),
+ ),
     );
   }
 }
