@@ -169,6 +169,9 @@ setState(() {
 });
                          if(opcity==true){
                            scaffold_key.currentState!.showBottomSheet((context) => GestureDetector(
+                            onVerticalDragCancel: () {
+
+                            },
                              child: Container(
                                height: 378.5,
                                width: double.infinity,
@@ -274,7 +277,6 @@ setState(() {
                                    ]
                                ),
                              ),
-                             onVerticalDragCancel: (){},
                            )).closed.then((value) {
                              setState(() {
 opcity=false;

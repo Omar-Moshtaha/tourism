@@ -7,6 +7,7 @@ import 'package:tourism/success_page.dart';
 import 'package:tourism/success_page2.dart';
 
 import 'login.dart';
+import 'notifications.dart';
 
 void main(){
   runApp(MyApp());
@@ -31,7 +32,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Login(),
+  home:Notifications(),
 );
   }
 
