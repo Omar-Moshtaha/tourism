@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tourism/faq.dart';
 import 'package:tourism/more.dart';
 import 'package:tourism/register.dart';
 import 'package:tourism/success_page.dart';
 import 'package:tourism/success_page2.dart';
 
+import 'about_us.dart';
 import 'login.dart';
 import 'notifications.dart';
 
@@ -32,7 +34,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Notifications(),
+  home:FAQ(),
 );
   }
 
