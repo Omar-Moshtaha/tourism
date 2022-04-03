@@ -6,6 +6,7 @@ import 'package:tourism/more.dart';
 import 'package:tourism/privacy_policy.dart';
 import 'package:tourism/refund_policy.dart';
 import 'package:tourism/register.dart';
+import 'package:tourism/result.dart';
 import 'package:tourism/success_page.dart';
 import 'package:tourism/success_page2.dart';
 import 'package:tourism/success_page3.dart';
@@ -38,7 +39,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Success3(),
+  home:Results(),
 );
   }
 
