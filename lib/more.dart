@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class MorePge extends StatelessWidget {
+class MorePge extends StatefulWidget {
   @override
+  _MorePgeState createState() => _MorePgeState();
+}
+
+class _MorePgeState extends State<MorePge> {
+  @override
+  var  curren= 0;
+
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       backgroundColor: HexColor('#FCFCFF'),
       appBar: AppBar(
         toolbarHeight:100,
@@ -225,7 +234,6 @@ body: Container(
        )
        ),
      ),
-
    ],
  ),
   decoration: BoxDecoration(
@@ -238,5 +246,6 @@ body: Container(
   ),
 ),
     );
+
   }
 }

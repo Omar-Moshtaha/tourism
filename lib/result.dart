@@ -36,7 +36,6 @@ color: HexColor("0C122C"),
     body: Container(
       child: Column(
         children: [
-
           Padding(
             padding: const EdgeInsets.only(right: 25,top: 25,left: 25,bottom: 25),
             child: Stack(
@@ -106,7 +105,8 @@ color: HexColor("0C122C"),
             ),
           ),
 Expanded(
-  child:   ListView.separated(physics: BouncingScrollPhysics(),itemBuilder: (context, index) =>           Padding(
+
+  child:   ListView.separated(scrollDirection: Axis.vertical,physics: BouncingScrollPhysics(),itemBuilder: (context, index) =>           Padding(
 
     padding: const EdgeInsets.only(right: 25,left: 25),
 
@@ -153,45 +153,65 @@ Expanded(
           crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
-
-            Container(
-
-
-
-              height: 150,
+            Stack(
+              children: [
+                Container(
 
 
 
-              width:150,
+                  height: 150,
 
 
 
-              decoration: BoxDecoration(
+                  width:150,
+
+
+
+                  decoration: BoxDecoration(
 
 
 
 
 
-                image: DecorationImage(
+                    image: DecorationImage(
 
-                    image: AssetImage("image/image24.png")
+                        image: AssetImage("image/image24.png")
+
+
+
+                    ),
+
+
+
+                    borderRadius: BorderRadius.circular(20),
+
+
+
+                  ),
 
 
 
                 ),
+      Padding(
+        padding: const EdgeInsets.only(top: 10,left: 10),
+        child: Container(
+          width: 71,
+          height: 26,
+          child: Center(
+            child: Text("Packages",style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
+          decoration: BoxDecoration(
+              color: Colors.white,
 
-
-
-                borderRadius: BorderRadius.circular(20),
-
-
-
-              ),
-
-
-
+              borderRadius: BorderRadius.circular(30)
+          ),
+        ),
+      )
+              ],
             ),
-
             Column(
 
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,26 +242,41 @@ Expanded(
 
                 ),
 
-                Padding(
+                Row(
+                  children: [
+                    Padding(
 
-                  padding: const EdgeInsets.only(left: 15,top:5),
+                      padding: const EdgeInsets.only(left: 15,top:5),
 
-                  child:   Text('Austria',style: TextStyle(
-
-
-
-
-
-                    fontSize: 12,
+                      child:   Text('Austria',style: TextStyle(
 
 
 
 
 
+                        fontSize: 12,
 
 
-                  ),),
 
+
+
+
+
+                      ),),
+
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 80,top: 4),
+                      child: Icon(Icons.star,color: HexColor("#FFD24A"),size:18,),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text("5.0",style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                    ),
+                  ],
                 ),
 
                 Padding(
@@ -266,28 +301,38 @@ Expanded(
 
                 ),
 
-                Padding(
+                Row(
+                  children: [
+                    Padding(
 
-                  padding: const EdgeInsets.only(left: 15,top:5),
+                      padding: const EdgeInsets.only(left: 15,top:5),
 
-                  child:   Text("570",style: TextStyle(
+                      child:   Text("\$ 570",style: TextStyle(
 
-                      color: HexColor("#00BEE8"),
-
-
-
-                      fontSize: 18,
-
-                      fontWeight: FontWeight.bold
+                          color: HexColor("#00BEE8"),
 
 
 
+                          fontSize: 18,
+
+                          fontWeight: FontWeight.bold
 
 
-                  ),),
 
+
+
+                      ),),
+
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 80,top: 5),
+                      child: Text("\$720",style: TextStyle(
+                        fontSize: 14,
+                        decoration: TextDecoration.lineThrough,
+                      ),),
+                    ),
+                  ],
                 ),
-
                 Padding(
 
                   padding: const EdgeInsets.only(left: 15,top:5),
@@ -309,10 +354,9 @@ Expanded(
 
 
 
-
               ],
 
-            )
+            ),
 
 
 
