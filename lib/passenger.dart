@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -29,6 +30,7 @@ class Passenger extends StatelessWidget {
       ),
 body:   Container(
   child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
 
       Padding(
@@ -75,16 +77,106 @@ body:   Container(
             height: 283,
             child: Column(
               children: [
-                Row(children: [
-                 SizedBox(width: 29,),
-                  Image(image: AssetImage("image/image26.png")),
-                 SizedBox(width: 22,),
-                  Column(
-                    children: [
-Text("Adult",style: TextStyle(
-  fontSize: 16,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(children: [
+                   SizedBox(width: 29,),
+                    Image(image: AssetImage("image/image26.png")),
+                   SizedBox(width: 22,),
+                    Column(
 
-),),
+                      children: [
+Padding(
+  padding: const EdgeInsets.only(top: 15),
+  child:   Text("Adult",style: TextStyle(
+    fontSize: 16,
+
+  ),),
+),
+                        SizedBox(height: 3,),
+                        Text("Age 12+",style: TextStyle(
+                          fontSize: 12,
+
+                        ),)
+
+                      ],
+                    ),
+Spacer(),
+Padding(
+  padding: const EdgeInsets.only(
+      top: 16),
+  child:   CircleAvatar(
+    radius: 15,
+    backgroundColor: HexColor("#00BEE8"),
+    child: Image(image: AssetImage("image/image30.png"),),
+
+  ),
+),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9,top: 18),
+                      child: Text("02",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                      ),),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left:9 ,right: 10,top: 16),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 17,
+                            backgroundColor: HexColor("#00BEE8"),
+                            child: Image(image: AssetImage("image/image31.png"),),
+
+                          ),
+                          CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Colors.white,
+                            child: Image(image: AssetImage("image/image31.png"),),
+
+                          ),
+                          CircleAvatar(
+                            radius: 15,
+                            backgroundColor: HexColor("#FFD24A"),
+                            child: Image(image: AssetImage("image/image31.png"),),
+
+                          ),
+
+                        ],
+                      ),
+                    ),
+
+                  ],),
+                ),
+      SizedBox(
+        height: 15,
+      ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+width: double.infinity,
+                    height: 1,
+                     color:HexColor("#D8D8D8"),
+                  ),
+                ),
+                Row(children: [
+                  SizedBox(width: 29,),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Image(image: AssetImage("image/image27.png")),
+                  ),
+                  SizedBox(width: 22,),
+                  Column(
+
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child:   Text("Adult",style: TextStyle(
+                          fontSize: 16,
+
+                        ),),
+                      ),
                       SizedBox(height: 3,),
                       Text("Age 12+",style: TextStyle(
                         fontSize: 12,
@@ -93,12 +185,218 @@ Text("Adult",style: TextStyle(
 
                     ],
                   ),
-CircleAvatar(
-  radius: 15,
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 16),
+                    child:   CircleAvatar(
+                      radius: 15,
+                      backgroundColor: HexColor("#00BEE8"),
+                      child: Image(image: AssetImage("image/image30.png"),),
 
-),
-                  Text(""),
-                  FloatingActionButton(onPressed: (){}),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 9,top: 18),
+                    child: Text("02",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left:9 ,right: 10,top: 16),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 17,
+                          backgroundColor: HexColor("#00BEE8"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 16,
+                          backgroundColor: Colors.white,
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundColor: HexColor("#FFD24A"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+
+                      ],
+                    ),
+                  ),
+
+                ],),
+                SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    width: double.infinity,
+                    height: 1,
+                    color:HexColor("#D8D8D8"),
+                  ),
+                ),
+                Row(children: [
+                  SizedBox(width: 29,),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Image(image: AssetImage("image/image28.png")),
+                  ),
+                  SizedBox(width: 22,),
+                  Column(
+
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child:   Text("Adult",style: TextStyle(
+                          fontSize: 16,
+
+                        ),),
+                      ),
+                      SizedBox(height: 3,),
+                      Text("Age 12+",style: TextStyle(
+                        fontSize: 12,
+
+                      ),)
+
+                    ],
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 16),
+                    child:   CircleAvatar(
+                      radius: 15,
+                      backgroundColor: HexColor("#00BEE8"),
+                      child: Image(image: AssetImage("image/image30.png"),),
+
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 9,top: 18),
+                    child: Text("02",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left:9 ,right: 10,top: 16),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 17,
+                          backgroundColor: HexColor("#00BEE8"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 16,
+                          backgroundColor: Colors.white,
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundColor: HexColor("#FFD24A"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+
+                      ],
+                    ),
+                  ),
+
+                ],),
+                SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Container(
+                    width: double.infinity,
+                    height: 1,
+                    color:HexColor("#D8D8D8"),
+                  ),
+                ),
+                Row(children: [
+                  SizedBox(width: 29,),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Image(image: AssetImage("image/image29.png")),
+                  ),
+                  SizedBox(width: 22,),
+                  Column(
+
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child:   Text("Adult",style: TextStyle(
+                          fontSize: 16,
+
+                        ),),
+                      ),
+                      SizedBox(height: 3,),
+                      Text("Age 12+",style: TextStyle(
+                        fontSize: 12,
+
+                      ),)
+
+                    ],
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 16),
+                    child:   CircleAvatar(
+                      radius: 15,
+                      backgroundColor: HexColor("#00BEE8"),
+                      child: Image(image: AssetImage("image/image30.png"),),
+
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 9,top: 18),
+                    child: Text("02",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left:9 ,right: 10,top: 16),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 17,
+                          backgroundColor: HexColor("#00BEE8"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 16,
+                          backgroundColor: Colors.white,
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundColor: HexColor("#FFD24A"),
+                          child: Image(image: AssetImage("image/image31.png"),),
+
+                        ),
+
+                      ],
+                    ),
+                  ),
+
                 ],),
               ],
             ),
@@ -109,7 +407,87 @@ CircleAvatar(
                  borderRadius: BorderRadius.circular(20)
              ),
           ),
-        )
+        ),
+    SizedBox(
+      height: 30,
+    ),
+   Padding(
+     padding: const EdgeInsets.only(right: 17),
+     child: Row(
+       mainAxisAlignment: MainAxisAlignment.center,
+       children: [
+         Padding(
+           padding: const EdgeInsets.only(left: 23),
+           child: Stack(
+             alignment: Alignment.center,
+             children: [
+               Container(
+                 width:147 ,
+                 height: 47,
+                 child: Center(
+                 ),
+                 decoration: BoxDecoration(
+                   color: HexColor("#00BEE8"),            borderRadius: BorderRadius.circular(50),
+                 ),
+               ),
+               Container(
+                 width:143 ,
+                 height: 43,
+
+                 decoration: BoxDecoration(
+                   color: Colors.white,
+                   borderRadius: BorderRadius.circular(50),
+                 ),
+               ),
+               Container(
+                 width:140 ,
+                 height: 40,
+                 child: Center(
+                   child: Text("Done",style: TextStyle(
+                     fontSize: 20,
+                     fontWeight: FontWeight.bold,
+                   ),),
+                 ),
+                 decoration: BoxDecoration(
+                   color: HexColor("#FFD24A"),
+                   borderRadius: BorderRadius.circular(50),
+                 ),
+               ),
+
+
+             ],
+           ),
+         ),
+
+         Padding(
+           padding: const EdgeInsets.only(left: 15),
+           child: Stack(
+             alignment: Alignment.center,
+             children: [
+
+               Container(
+                 width:140 ,
+                 height: 40,
+                 child: Center(
+                   child: Text("Cancel",style: TextStyle(
+                     fontSize: 20,
+                     fontWeight: FontWeight.bold,
+                   ),),
+                 ),
+                 decoration: BoxDecoration(
+                   color: HexColor("#E9E9E9"),
+                   borderRadius: BorderRadius.circular(50),
+                 ),
+               ),
+
+
+             ],
+           ),
+         ),
+
+       ],
+     ),
+   )
     ],
   ),
   decoration: BoxDecoration(
