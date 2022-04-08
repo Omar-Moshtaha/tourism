@@ -15,6 +15,7 @@ import 'package:tourism/success_page2.dart';
 import 'package:tourism/success_page3.dart';
 import 'package:tourism/terms_conditions.dart';
 
+import 'Settings.dart';
 import 'about_us.dart';
 import 'login.dart';
 import 'notifications.dart';
@@ -42,7 +43,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Home(),
+  home:Settings(),
 );
   }
 
