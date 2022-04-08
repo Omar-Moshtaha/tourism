@@ -182,13 +182,13 @@ decoration: BoxDecoration(
 
   Padding(
     padding: const EdgeInsets.only(top: 20,left: 20,right: 20,bottom: 20),
-    child: GridView.count(childAspectRatio: 1/1.70,physics: NeverScrollableScrollPhysics(),mainAxisSpacing:1 ,crossAxisSpacing: 1,shrinkWrap: true , crossAxisCount: 2,children:List.generate(10, (index) => Stack(
+    child: GridView.count(childAspectRatio: 1/1.60,physics: NeverScrollableScrollPhysics(),mainAxisSpacing:1 ,crossAxisSpacing: 1,shrinkWrap: true , crossAxisCount: 2,children:List.generate(10, (index) => Stack(
       children: [
         Container(decoration: BoxDecoration(
             color: Colors.white,
 
 borderRadius: BorderRadius.circular(20)
-        ),width: 160,height: 280,),
+        ),width: 160,height: 260,),
         Container(width: 160,height: 150,decoration: BoxDecoration(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
           image: DecorationImage(
@@ -268,8 +268,33 @@ Padding(
 
 
 
-      ),)
+      ),),
+SizedBox(height: 3,),
+      Row(
+  children: [
+    Text("From",style: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w500
+    ),),
+   SizedBox(width: 5,),
+    Text("\$728",style: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      color: HexColor("#00BEE8")
+    ),),
+    Spacer(),
+    Padding(
+      padding: const EdgeInsets.only(right:30 ),
+      child: Text("\$750",style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+        decoration: TextDecoration.lineThrough
+      ),),
+    )
 
+
+  ],
+),
 
 
 
@@ -286,6 +311,29 @@ Padding(
 
   ),
 ),
+        Padding(
+          padding: const EdgeInsets.only(top: 10,left: 10),
+          child: Container(
+          child: Row(
+            children: [
+
+              Padding(
+                padding: const EdgeInsets.only(left: 4),
+                child: Icon(Icons.star_rounded,color: Colors.white,size: 17,),
+              ),
+              SizedBox(width: 3,),
+              Text("5.0",style: TextStyle(
+                fontSize: 12,
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+              ),),
+            ],
+          ),width:49 ,height: 20,decoration: BoxDecoration(
+            color: HexColor("#FFD24A"),
+            
+            borderRadius: BorderRadius.circular(20),
+          ),),
+        )
       ],
     ))),
   ),
