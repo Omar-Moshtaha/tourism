@@ -6,6 +6,7 @@ import 'package:tourism/home.dart';
 import 'package:tourism/more.dart';
 import 'package:tourism/packages.dart';
 import 'package:tourism/passenger.dart';
+import 'package:tourism/passengers%20_details.dart';
 import 'package:tourism/privacy_policy.dart';
 import 'package:tourism/refund_policy.dart';
 import 'package:tourism/register.dart';
@@ -43,7 +44,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Settings(),
+  home:PassengersDetails(),
 );
   }
 
