@@ -78,94 +78,139 @@ body: Container(
       Padding(
         padding: const EdgeInsets.only(left: 25,right: 25),
         child: Container(
-          height: 320,
+          height: 400,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 24,right: 22),
-                      child: Image(image: AssetImage("image/image21.png")),
-                    ),
-                  Column(
-                    children: [
-                      Text("Adult",style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400
-                      ),),
-                   SizedBox(height: 3,),
-                      Padding(
-                        padding: const EdgeInsets.only(left:10),
-                        child: Text("Age 12+",style: TextStyle(
-                            fontSize: 12,
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 24,right: 22),
+                          child: Image(image: AssetImage("image/image21.png")),
+                        ),
+                      Column(
+                        children: [
+                          Text("Adult",style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400
+                          ),),
+                       SizedBox(height: 3,),
+                          Padding(
+                            padding: const EdgeInsets.only(left:10),
+                            child: Text("Age 12+",style: TextStyle(
+                                fontSize: 12,
 
-                        ),),
+                            ),),
+                          ),
+
+                        ],
                       ),
-
-                    ],
-                  ),
-
          Row(children: [
            Padding(
              padding: const EdgeInsets.only(
-                 top: 16,left: 102,bottom: 15),
+                     top: 16,left: 102,bottom: 15),
              child:   CircleAvatar(
-               radius: 15,
-               backgroundColor: HexColor("#00BEE8"),
-               child: Image(image: AssetImage("image/image30.png"),),
+                   radius: 15,
+                   backgroundColor: HexColor("#00BEE8"),
+                   child: Image(image: AssetImage("image/image30.png"),),
 
              ),
            ),
            Padding(
              padding: const EdgeInsets.only(left: 9,top: 18,bottom: 15),
              child: Text("02",style: TextStyle(
-                 fontSize: 20,
-                 fontWeight: FontWeight.bold
+                     fontSize: 20,
+                     fontWeight: FontWeight.bold
              ),),
            ),
            Padding(
              padding: const EdgeInsets.only(left:9 ,right: 10,top: 16,bottom: 15),
              child: Stack(
-               alignment: Alignment.center,
-               children: [
-                 CircleAvatar(
-                   radius: 17,
-                   backgroundColor: HexColor("#00BEE8"),
-                   child: Image(image: AssetImage("image/image31.png"),),
+                   alignment: Alignment.center,
+                   children: [
+                     CircleAvatar(
+                       radius: 17,
+                       backgroundColor: HexColor("#00BEE8"),
+                       child: Image(image: AssetImage("image/image31.png"),),
 
-                 ),
-                 CircleAvatar(
-                   radius: 16,
-                   backgroundColor: Colors.white,
-                   child: Image(image: AssetImage("image/image31.png"),),
+                     ),
+                     CircleAvatar(
+                       radius: 16,
+                       backgroundColor: Colors.white,
+                       child: Image(image: AssetImage("image/image31.png"),),
 
-                 ),
-                 CircleAvatar(
-                   radius: 15,
-                   backgroundColor: HexColor("#FFD24A"),
-                   child: Image(image: AssetImage("image/image31.png"),),
+                     ),
+                     CircleAvatar(
+                       radius: 15,
+                       backgroundColor: HexColor("#FFD24A"),
+                       child: Image(image: AssetImage("image/image31.png"),),
 
-                 ),
+                     ),
 
-               ],
+                   ],
              ),
            ),
          ],),
-                  ],
+                      ],
+                    ),
+                  ),
+                Padding(
+                  padding: const EdgeInsets.only( top: 71,left: 24),
+                  child: Text("Ahmed Ali",style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),),
                 ),
+                  Padding(
+                    padding: const EdgeInsets.only( top: 69,left: 100),
+                    child: Text("( Adult 1 )",style: TextStyle(
+                      fontSize: 14,
+                    ),),
+                  ),
+Padding(
+  padding: const EdgeInsets.only(top: 72,left: 280),
+  child:   CircleAvatar(child: Image(width: 7,height: 10,image: AssetImage("image/image4.png"),),radius: 7,backgroundColor: HexColor("#0BA400"),),
+),
+      Padding(
+        padding: const EdgeInsets.only(top: 68,left: 300),
+        child: Icon(Icons.arrow_right_alt_outlined, color: HexColor("#E9E9E9"),),
+      ),
+                ],
               ),
 Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 15),
-  child:   Container(
-
-    height: 1,width: double.infinity,
-
-    color: HexColor("#E9E9E9"),
-
-  ),
+  padding: const EdgeInsets.only(left: 15,right: 15,top: 10 ),
+  child:   Image(image: AssetImage("image/image16.png"),width: double.infinity,),
 ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15,left: 25),
+                child: Row(children: [
+                  Text("Adult 2",style: TextStyle(
+                     fontSize: 14,
+                    fontWeight: FontWeight.bold
+                  ),),
+                     Spacer(),
+                  CircleAvatar(child: Image(width: 7,height: 10,image: AssetImage("image/image4.png"),),radius: 7,backgroundColor: HexColor("#0BA400"),),
+               SizedBox(width: 3,),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Icon(Icons.arrow_right_alt_outlined, color: HexColor("#E9E9E9"),),
+                  ),
+                ],),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right:15,left: 15,top: 15),
+                child:   Container(
+
+                  height: 1,width: double.infinity,
+
+                  color: HexColor("#E9E9E9"),
+
+                ),
+              ),
+
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Row(
