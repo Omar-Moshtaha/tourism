@@ -2,9 +2,38 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-class FAQ extends StatelessWidget {
+class Model {
+  int? id;
+Model(this.id);
+}
+class FAQ extends StatefulWidget {
   @override
+  _FAQState createState() => _FAQState();
+}
+
+class _FAQState extends State<FAQ> {
+@override
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
+  List<Model> item=[
+Model(0),
+    Model(1),
+    Model(2),
+    Model(3),
+    Model(4),
+    Model(5),
+    Model(6),
+    Model(7),
+
+  ];
+  double heigth=62;
+String image="image/image18.png";
+  bool value=true;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: HexColor('#FCFCFF'),
@@ -34,260 +63,15 @@ class FAQ extends StatelessWidget {
       ),
       body: Container(
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20,left: 25,right: 25),
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 140,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
+physics: BouncingScrollPhysics(),
+         child: Container(
+           height: 800,
+           child: ListView.separated(physics: BouncingScrollPhysics(),itemBuilder: (context, index) =>         bulidItem(item[index]),
+               separatorBuilder: (context, index) => SizedBox(height: 1,), itemCount: 8),
+         ),
 
-                          borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-Padding(
-  padding: const EdgeInsets.only(top: 62),
-  child:   Container(height: 2,decoration: BoxDecoration(
-
-    image: DecorationImage(
-
-      image: AssetImage('image/image16.png'),
-
-  fit: BoxFit.cover
-
-    )
-
-  ),),
-),
-Padding(
-  padding: const EdgeInsets.only(top: 80,left: 15,right: 15),
-  child:   Center(child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore \nmagna aliqua.',style: TextStyle(
-    fontSize: 12
-  ),
-    textAlign: TextAlign.start,
-  )),
-),
-                    Row(
-  children: [
-    Padding(
-      padding: const EdgeInsets.only(left: 15,top: 10),
-      child: CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-    ),
-Padding(
-  padding: const EdgeInsets.only(left: 15,top: 10),
-  child:   Text('What is the App ?',style: TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  ),),
-),
-    Spacer(),
-  Padding(
-    padding: const EdgeInsets.only(right: 15,top: 10),
-    child: Image(image: AssetImage('image/image18.png')),
-  ),
-  ],
-),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-  fontSize: 16,
-  fontWeight: FontWeight.bold,
-),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
-                child: Container(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 15,),
-                      CircleAvatar(backgroundColor: HexColor('#FFF6DB'),child: Image(image: AssetImage('image/image17.png'))),
-                      SizedBox(width: 15,),
-                      Text('What is the App ?',style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22,bottom: 22,right: 15),
-                        child: Image(image: AssetImage("image/image19.png")),
-                      ),
-                    ],
-                  ),
-                  height: 62,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white
-                  ),
-                ),
-              ),
-
-            ],
-          ),
         ),
+
         decoration: BoxDecoration(
 image: DecorationImage(
     image: AssetImage('image/image1.png')
@@ -297,4 +81,74 @@ image: DecorationImage(
       ),
     );
   }
+  Widget bulidItem(Model item)=>     Padding(
+
+    padding: const EdgeInsets.only(top: 15,right: 25,left: 25),
+
+    child: Container(
+
+      child:Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              children: [
+                SizedBox(width: 15,),
+                CircleAvatar(backgroundColor: HexColor("#FFF6DB"),child: Image(image: AssetImage("image/image17.png"),)),
+                SizedBox(width: 15,),
+                Text("What is the App ?",style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),),
+
+                Spacer(),
+                value?
+                Padding(
+                  padding: const EdgeInsets.only(right:15 ),
+                  child: GestureDetector(onTap: () {
+
+                    setState(() {
+                      value=false;
+                      heigth=140;
+                    });
+
+                  },child: Image(image: AssetImage("image/image19.png"))),
+                ):
+                Padding(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: GestureDetector(onTap: () {
+
+                    setState(() {
+                      value=true;
+                      heigth=62;
+                    });
+
+                  },child: Image(image: AssetImage("image/image18.png"),),),
+                ),
+              ],
+            ),
+          ),
+          !value?Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child:   Image(image: AssetImage("image/image16.png"),fit: BoxFit.cover,height: 1,width: 350,),
+          ):Container(),
+          !value?             Padding(
+            padding: const EdgeInsets.only(right: 20,left: 20,top: 15),
+            child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua.",style: TextStyle(
+              fontSize: 12,
+            ),textAlign: TextAlign.start,),
+          ):Container(),
+        ],
+      ) ,
+
+      height: heigth,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+
+        borderRadius: BorderRadius.circular(20),
+      ),
+    ),
+
+  );
 }
