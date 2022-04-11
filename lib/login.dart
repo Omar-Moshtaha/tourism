@@ -14,9 +14,9 @@ class _LoginState extends State<Login> {
     super.initState();
   }
   var scaffold_key=GlobalKey<ScaffoldState>();
-
-var opcity=false;
-var bottomSheet=false;
+var value = false;
+var opcity = false;
+bool isbool = true;
   @override
   Widget build(BuildContext context) {
 
@@ -164,129 +164,9 @@ suffixIcon: Padding(
                       padding: const EdgeInsets.only(top: 30),
                       child: GestureDetector(
                         onTap: () {
-setState(() {
-  opcity=true;
-});
-                         if(opcity==true){
-                           scaffold_key.currentState!.showBottomSheet((context) => GestureDetector(
-                            onVerticalDragCancel: () {
-
-                            },
-                             child: Container(
-                               height: 378.5,
-                               width: double.infinity,
-                               child: Column(
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
-                                   Padding(
-                                     padding: const EdgeInsets.only(top: 30),
-                                     child: Center(child: Image(image: AssetImage('image/image13.png'))),
-                                   ),
-                                   Padding(
-                                     padding: const EdgeInsets.only(top: 25,left: 20),
-                                     child: Text('Forgot Password :',style: TextStyle(
-                                         fontSize: 24,
-                                         fontWeight: FontWeight.bold
-                                     ),),
-                                   ),
-                                   Padding(
-                                     padding: const EdgeInsets.only(top: 25.5,left: 20),
-                                     child: Text('Please enter your registered email to send you\n a message containing your password reset',style: TextStyle(
-                                       fontSize: 16,
-                                       height: 1.5,
-
-                                     ),
-                                       textAlign: TextAlign.center,
-                                     ),
-                                   ),
-
-                                   Center(
-                                     child: Padding(
-                                       padding: const EdgeInsets.only(left:20,right: 20,top: 30),
-                                       child: Container(
-                                         height: 45,
-                                         child: TextFormField(
-
-                                           cursorColor: HexColor('#CBF6FF'),
-                                           decoration: InputDecoration(
-                                             focusedBorder: OutlineInputBorder(
-                                               borderSide: BorderSide(color: HexColor('#CBF6FF')),
-                                               borderRadius: BorderRadius.only(
-                                                   topLeft: Radius.circular(23),
-                                                   bottomLeft: Radius.circular(23),
-                                                   bottomRight: Radius.circular(23)
-                                               ),
-
-                                             ),
-
-                                             prefixIcon: Padding(
-                                               padding: const EdgeInsets.only(left: 15,right: 10),
-                                               child:   Icon(Icons.email,color: HexColor("#FFD24A"),size: 24,),
-                                             ),
-                                             hintText: "E-mail",
-
-                                             contentPadding: const EdgeInsets.only(bottom: 10),
-
-                                             enabledBorder: OutlineInputBorder(
-                                                 borderSide: BorderSide(color: HexColor('#CBF6FF')),
-                                                 borderRadius: BorderRadius.only(
-                                                     topLeft: Radius.circular(23),
-                                                     bottomLeft: Radius.circular(23),
-                                                     bottomRight: Radius.circular(23)
-                                                 )
-                                             ),
-                                           ),),
-                                       ),
-                                     ),
-                                   ),
-                                   GestureDetector(
-                                     onTap: () {
-
-                                     },
-                                     child: Padding(
-                                       padding: const EdgeInsets.only(top: 50),
-                                       child: Center(
-                                         child: Container(
-                                           height:50,
-                                           width: 160,
-                                           decoration: BoxDecoration(
-                                               color: HexColor('#FFD24A'),
-                                               borderRadius: BorderRadius.all(Radius.circular(50)),
-                                               border: Border.all(color: HexColor('#00BEE8'),width: 3)
-
-                                           ),
-                                           child: Center(
-                                             child: Text("Send",style: TextStyle(
-                                                 fontWeight: FontWeight.bold,
-                                                 color: Colors.black,
-                                                 fontSize: 20
-                                             ),),
-                                           ),
-                                         ),
-                                       ),
-                                     ),
-                                   ),
-
-                                 ],
-                               ),
-                               decoration: BoxDecoration(
-                                   color:HexColor('#FCFCFF'),
-                                   borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft: Radius.circular(30)),
-                                   boxShadow: [
-                                     BoxShadow(color: Colors.black87,offset: Offset(2,2),spreadRadius: 5, blurRadius: 30)
-                                   ]
-                               ),
-                             ),
-                           )).closed.then((value) {
-                             setState(() {
-opcity=false;
-                             });
-                           });
-                         }else{
-                           setState(() {
-                             opcity=false;
-                           });
-                         }
+                          setState(() {
+                            opcity = true;
+                          });
 
                         },
                         child: Text("Forgot Password ?",style: TextStyle(
@@ -379,15 +259,123 @@ Text('Customer ',style: TextStyle(
          child: FloatingActionButton(backgroundColor: HexColor('#FFD24A'),child:Image(image: AssetImage('image/image12.png'),) ,mini: true,onPressed: () {
 
            setState(() {
-             opcity=true;
+             opcity=false;
            });
-Navigator.pop(context);
          },),
        ),
      ),
    ),
  ),
+bottomSheet: !opcity?Card():GestureDetector(
+  onVerticalDragCancel: () {
 
+  },
+  child: Container(
+    height: 378.5,
+    width: double.infinity,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Center(child: Image(image: AssetImage('image/image13.png'))),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 25,left: 20),
+          child: Text('Forgot Password :',style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold
+          ),),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 25.5,left: 20),
+          child: Text('Please enter your registered email to send you\n a message containing your password reset',style: TextStyle(
+            fontSize: 16,
+            height: 1.5,
+
+          ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(left:20,right: 20,top: 30),
+            child: Container(
+              height: 45,
+              child: TextFormField(
+
+                cursorColor: HexColor('#CBF6FF'),
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: HexColor('#CBF6FF')),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(23),
+                        bottomLeft: Radius.circular(23),
+                        bottomRight: Radius.circular(23)
+                    ),
+
+                  ),
+
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(left: 15,right: 10),
+                    child:   Icon(Icons.email,color: HexColor("#FFD24A"),size: 24,),
+                  ),
+                  hintText: "E-mail",
+
+                  contentPadding: const EdgeInsets.only(bottom: 10),
+
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: HexColor('#CBF6FF')),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(23),
+                          bottomLeft: Radius.circular(23),
+                          bottomRight: Radius.circular(23)
+                      )
+                  ),
+                ),),
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: Center(
+              child: Container(
+                height:50,
+                width: 160,
+                decoration: BoxDecoration(
+                    color: HexColor('#FFD24A'),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    border: Border.all(color: HexColor('#00BEE8'),width: 3)
+
+                ),
+                child: Center(
+                  child: Text("Send",style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 20
+                  ),),
+                ),
+              ),
+            ),
+          ),
+        ),
+
+      ],
+    ),
+    decoration: BoxDecoration(
+        color:HexColor('#FCFCFF'),
+        borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft: Radius.circular(30)),
+        boxShadow: [
+          BoxShadow(color: Colors.black87,offset: Offset(2,2),spreadRadius: 5, blurRadius: 30)
+        ]
+    ),
+  ),
+),
     );
   }
 }
