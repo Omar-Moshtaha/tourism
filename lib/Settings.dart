@@ -321,7 +321,7 @@ class _SettingsState extends State<Settings> {
                 mini: true,
                 onPressed: () {
                   setState(() {
-                    opcity = true;
+                    opcity = false;
                   });
                 },
               ),
@@ -329,7 +329,7 @@ class _SettingsState extends State<Settings> {
           ),
         ),
       ),
-      bottomSheet:  opcity?GestureDetector(
+      bottomSheet:  !opcity?Card():GestureDetector(
         onVerticalDragCancel: () {},
         child: Container(
           child: Column(
@@ -498,7 +498,7 @@ class _SettingsState extends State<Settings> {
                 topLeft: Radius.circular(30)),
           ),
         ),
-      ):Card(),
+      ),
     );
   }
 }

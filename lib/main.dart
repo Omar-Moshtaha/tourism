@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:tourism/faq.dart';
 import 'package:tourism/home.dart';
 import 'package:tourism/more.dart';
+import 'package:tourism/my_profile.dart';
 import 'package:tourism/packages.dart';
 import 'package:tourism/passenger.dart';
 import 'package:tourism/passengers%20_details.dart';
@@ -45,7 +46,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:Login(),
+  home:MyProfile(),
 );
   }
 
