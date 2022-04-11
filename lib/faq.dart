@@ -4,7 +4,10 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 class Model {
   int? id;
-  Model(this.id);
+  bool?value;
+  String? image;
+  double ?heigth;
+  Model(this.id,this.value,this.heigth,this.image);
 }
 class FAQ extends StatefulWidget {
   @override
@@ -20,19 +23,19 @@ class _FAQState extends State<FAQ> {
   }
   @override
   List<Model> item=[
-    Model(0),
-    Model(1),
-    Model(2),
-    Model(3),
-    Model(4),
-    Model(5),
-    Model(6),
-    Model(7),
+    Model(0,true,62,"image/image18.png"),
+    Model(1,true,62,"image/image18.png"),
+    Model(2,true,62,"image/image18.png"),
+    Model(3,true,62,"image/image18.png"),
+    Model(4,true,62,"image/image18.png"),
+    Model(5,true,62,"image/image18.png"),
+    Model(6,true,62,"image/image18.png"),
+    Model(7,true,62,"image/image18.png"),
 
   ];
-  double heigth=62;
-  String image="image/image18.png";
-  bool value=true;
+  // double heigth=62;
+  // String image="image/image18.png";
+  // bool value=true;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,61 +90,63 @@ class _FAQState extends State<FAQ> {
 
     child: Container(
 
-      child:Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Row(
-              children: [
-                SizedBox(width: 15,),
-                CircleAvatar(backgroundColor: HexColor("#FFF6DB"),child: Image(image: AssetImage("image/image17.png"),)),
-                SizedBox(width: 15,),
-                Text("What is the App ?",style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),),
+      child:SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Row(
+                children: [
+                  SizedBox(width: 15,),
+                  CircleAvatar(backgroundColor: HexColor("#FFF6DB"),child: Image(image: AssetImage("image/image17.png"),)),
+                  SizedBox(width: 15,),
+                  Text("What is the App ?",style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),),
 
-                Spacer(),
-                value?
-                Padding(
-                  padding: const EdgeInsets.only(right:15 ),
-                  child: GestureDetector(onTap: () {
+                  Spacer(),
+                  item.value!?
+                  Padding(
+                    padding: const EdgeInsets.only(right:15 ),
+                    child: GestureDetector(onTap: () {
 
-                    setState(() {
-                      value=false;
-                      heigth=140;
-                    });
+                      setState(() {
+                        item.value=false;
+                        item.heigth=140;
+                      });
 
-                  },child: Image(image: AssetImage("image/image19.png"))),
-                ):
-                Padding(
-                  padding: const EdgeInsets.only(right: 15),
-                  child: GestureDetector(onTap: () {
+                    },child: Image(image: AssetImage("image/image19.png"))),
+                  ):
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: GestureDetector(onTap: () {
 
-                    setState(() {
-                      value=true;
-                      heigth=62;
-                    });
+                      setState(() {
+                        item.value=true;
+                        item. heigth=62;
+                      });
 
-                  },child: Image(image: AssetImage("image/image18.png"),),),
-                ),
-              ],
+                    },child: Image(image: AssetImage("image/image18.png"),),),
+                  ),
+                ],
+              ),
             ),
-          ),
-          !value?Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child:   Image(image: AssetImage("image/image16.png"),fit: BoxFit.cover,height: 1,width: 350,),
-          ):Container(),
-          !value?             Padding(
-            padding: const EdgeInsets.only(right: 20,left: 20,top: 15),
-            child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua.",style: TextStyle(
-              fontSize: 12,
-            ),textAlign: TextAlign.start,),
-          ):Container(),
-        ],
+            !item.value!?Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child:   Image(image: AssetImage("image/image16.png"),fit: BoxFit.cover,height: 1,width: 350,),
+            ):Container(),
+             !item.value!?             Padding(
+              padding: const EdgeInsets.only(right: 20,left: 20,top: 15),
+              child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua.",style: TextStyle(
+                fontSize: 12,
+              ),textAlign: TextAlign.start,),
+            ):Container(),
+          ],
+        ),
       ) ,
 
-      height: heigth,
+      height:  item.heigth,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
