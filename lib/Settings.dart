@@ -13,7 +13,7 @@ class _SettingsState extends State<Settings> {
 var key=GlobalKey<ScaffoldState>();
   var value=false;
 var opcity=false;
-
+bool isbool=true;
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,85 +189,141 @@ Text("EN",style: TextStyle(
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-Padding(
-  padding: const EdgeInsets.only(top: 30,left: 20),
-  child:   Container(
+GestureDetector(
+  onTap: () {
 
-    width: 160,
+    setState(() {
+      isbool=true;
+    });
+  },
+  child:   Padding(
 
-    height: 103,
+    padding: const EdgeInsets.only(top: 30,left: 20),
 
-    child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-Image(image: AssetImage("image/image37.png"),height: 30,width:29 ,color: HexColor("#FFD24A"),)
-,Padding(
-  padding: const EdgeInsets.only(top: 14),
-  child:   Text("English Language",style: TextStyle(
-
-            fontSize: 14,
-
-            fontWeight: FontWeight.bold,
-
-          ),),
-)
-
-      ],
-
-    ),
-
-    decoration: BoxDecoration(
-
-      color: Colors.white,
+    child:   Container(
 
 
 
-      borderRadius: BorderRadius.circular(20),
+      width: 160,
 
-      border: Border.all(color: HexColor("#00BEE8"),width: 2),
+
+
+      height: 103,
+
+
+
+      child: Column(
+
+  mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+
+  Image(image: AssetImage("image/image37.png"),height: 30,width:29 ,color: HexColor("#FFD24A"),)
+
+  ,Padding(
+
+    padding: const EdgeInsets.only(top: 14),
+
+    child:   Text("English Language",style: TextStyle(
+
+
+
+              fontSize: 14,
+
+
+
+              fontWeight: FontWeight.bold,
+
+
+
+            ),),
+
+  )
+
+
+
+        ],
+
+
+
+      ),
+
+
+
+      decoration: BoxDecoration(
+
+
+
+        color: Colors.white,
+
+
+
+
+
+
+
+        borderRadius: BorderRadius.circular(20),
+
+
+
+        border:isbool? Border.all(color: HexColor("#00BEE8"),width: 2):null,
+
+
+
+      ),
+
+
 
     ),
 
   ),
 ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30,left: 15,right: 20),
-                              child:   Container(
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isbool=false;
+                                });
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 30,left: 15,right: 20),
+                                child:   Container(
 
-                                width: 160,
+                                  width: 160,
 
-                                height: 103,
+                                  height: 103,
 
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image(image: AssetImage("image/image37.png"),height: 30,width:29 ,color: HexColor("#FFD24A"),)
-                                    ,Padding(
-                                      padding: const EdgeInsets.only(top: 14),
-                                      child:   Text("اللغة العربية",style: TextStyle(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image(image: AssetImage("image/image37.png"),height: 30,width:29 ,color: HexColor("#FFD24A"),)
+                                      ,Padding(
+                                        padding: const EdgeInsets.only(top: 14),
+                                        child:   Text("اللغة العربية",style: TextStyle(
 
-                                        fontSize: 14,
+                                          fontSize: 14,
 
-                                        fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.bold,
 
-                                      ),),
-                                    )
+                                        ),),
+                                      )
 
-                                  ],
+                                    ],
+
+                                  ),
+
+                                  decoration: BoxDecoration(
+
+                                    color: Colors.white,
+
+                                    border:!isbool? Border.all(color: HexColor("#00BEE8"),width: 2):null,
+
+
+                                    borderRadius: BorderRadius.circular(20),
+
+
+                                  ),
 
                                 ),
-
-                                decoration: BoxDecoration(
-
-                                  color: Colors.white,
-
-
-
-                                  borderRadius: BorderRadius.circular(20),
-
-
-                                ),
-
                               ),
                             ),
 

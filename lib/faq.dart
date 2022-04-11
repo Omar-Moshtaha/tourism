@@ -4,7 +4,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 class Model {
   int? id;
-Model(this.id);
+  Model(this.id);
 }
 class FAQ extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class FAQ extends StatefulWidget {
 }
 
 class _FAQState extends State<FAQ> {
-@override
+  @override
 
   void initState() {
     // TODO: implement initState
@@ -20,7 +20,7 @@ class _FAQState extends State<FAQ> {
   }
   @override
   List<Model> item=[
-Model(0),
+    Model(0),
     Model(1),
     Model(2),
     Model(3),
@@ -31,7 +31,7 @@ Model(0),
 
   ];
   double heigth=62;
-String image="image/image18.png";
+  String image="image/image18.png";
   bool value=true;
 
   Widget build(BuildContext context) {
@@ -63,20 +63,20 @@ String image="image/image18.png";
       ),
       body: Container(
         child: SingleChildScrollView(
-physics: BouncingScrollPhysics(),
-         child: Container(
-           height: 800,
-           child: ListView.separated(physics: BouncingScrollPhysics(),itemBuilder: (context, index) =>         bulidItem(item[index]),
-               separatorBuilder: (context, index) => SizedBox(height: 1,), itemCount: 8),
-         ),
+          physics: BouncingScrollPhysics(),
+          child: Container(
+            height: 800,
+            child: ListView.separated(physics: BouncingScrollPhysics(),itemBuilder: (context, index) =>         bulidItem(item[index]),
+                separatorBuilder: (context, index) => SizedBox(height: 1,), itemCount: 8),
+          ),
 
         ),
 
         decoration: BoxDecoration(
-image: DecorationImage(
-    image: AssetImage('image/image1.png')
+            image: DecorationImage(
+                image: AssetImage('image/image1.png')
 
-)
+            )
         ),
       ),
     );
