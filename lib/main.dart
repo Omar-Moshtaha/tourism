@@ -45,7 +45,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:FAQ(),
+  home:PassengerDetails(),
 );
   }
 
