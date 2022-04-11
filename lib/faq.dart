@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:hexcolor/hexcolor.dart';
 class Model {
-  int? id;
   bool?value;
-  String? image;
   double ?heigth;
-  Model(this.id,this.value,this.heigth,this.image);
+  Model(this.value,this.heigth);
 }
 class FAQ extends StatefulWidget {
   @override
@@ -23,14 +21,14 @@ class _FAQState extends State<FAQ> {
   }
   @override
   List<Model> item=[
-    Model(0,true,62,"image/image18.png"),
-    Model(1,true,62,"image/image18.png"),
-    Model(2,true,62,"image/image18.png"),
-    Model(3,true,62,"image/image18.png"),
-    Model(4,true,62,"image/image18.png"),
-    Model(5,true,62,"image/image18.png"),
-    Model(6,true,62,"image/image18.png"),
-    Model(7,true,62,"image/image18.png"),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
+    Model(true,62),
 
   ];
   // double heigth=62;
