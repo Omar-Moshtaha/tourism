@@ -4,7 +4,8 @@ import 'package:hexcolor/hexcolor.dart';
 class MyModel{
   double?heigth;
   bool?value;
-MyModel(this.value,this.heigth);
+  String?title;
+MyModel(this.value,this.heigth,this.title);
 }
 class Data{
   String? text1;
@@ -21,8 +22,8 @@ class _PassengerDetailsState extends State<PassengerDetails> {
   @override
 
 List<MyModel>item=[
-  MyModel(true,62),
-  MyModel(true,62)
+  MyModel(true,62,"Details Adult 1"),
+  MyModel(true,62,"Details Adult 2")
 
 ];
 
@@ -144,7 +145,7 @@ List<MyModel>item=[
                 SizedBox(width: 15,),
                 CircleAvatar(backgroundColor: HexColor("#EBF8EE"),child: Image(image: AssetImage("image/image43.png"),)),
                 SizedBox(width: 15,),
-                Text("Details Adult 1 ",style: TextStyle(
+                Text("${item.title} ",style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),),
