@@ -14,7 +14,7 @@ class MyProfile extends StatelessWidget {
         centerTitle: true,
 toolbarHeight: 210,
         title: Padding(
-          padding: const EdgeInsets.only(bottom: 128,left: 10),
+          padding: const EdgeInsets.only(bottom: 20,left: 10),
           child: Padding(
             padding: const EdgeInsets.only(right: 15),
             child: Text("My Profile",style: TextStyle(
@@ -39,7 +39,29 @@ flexibleSpace: Stack(
 
       ),
     ),
-    Positioned(top: 172.5,child: CircleAvatar(radius: 60,backgroundImage: AssetImage("image/image45.png"),backgroundColor: Colors.white,)),
+    Positioned(top: 172.5,child: Stack(
+       clipBehavior: Clip.none,
+      alignment: Alignment.center,
+      children: [
+
+        CircleAvatar(radius: 60,backgroundImage: AssetImage("image/image45.png"),backgroundColor: Colors.white,),
+    Positioned(
+    top: 90
+    , child: Padding(
+      padding: const EdgeInsets.only(left: 5),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CircleAvatar(backgroundColor: Colors.white,radius: 22,),
+          FloatingActionButton(onPressed: () {
+
+            },mini: true,child: Image(image: AssetImage("image/image46.png"),),backgroundColor: HexColor("#FFD24A"),),
+        ],
+      ),
+    ),
+    ),
+      ],
+    )),
   ],
 ),
       ),
