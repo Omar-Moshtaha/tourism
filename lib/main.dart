@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tourism/Order%20Details.dart';
 import 'package:tourism/faq.dart';
 import 'package:tourism/home.dart';
 import 'package:tourism/more.dart';
@@ -46,7 +47,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:MyProfile(),
+  home:OrderDetails(),
 );
   }
 
