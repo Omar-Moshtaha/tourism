@@ -7,12 +7,26 @@ String? image;
 String?title;
 MyApp(this.color,this.image,this.title);
 }
+class Data{
+  String?text1;
+  String? text2;
+  String?text3;
+  Data(this.text1,this.text2,this.text3);
+}
 class OrderDetails extends StatelessWidget {
 List<MyApp>item=[
   MyApp("#CBF6FF","image/image49.png","Flight details"),
   MyApp("#FEE4E4","image/image52.png","Hotel details"),
   MyApp("#EBF8EE","image/image53.png","Transportation details"),
   MyApp("#FFEBDF","image/image50.png","Flight details"),
+
+];
+List<Data>data=[
+  Data("Adult 1 ", "420.4", "116.75"),
+  Data("Adult 2 ", "420.4", "116.75"),
+  Data("Child 1 ", "420.4", "116.75"),
+  Data("Child 2 ", "420.4", "116.75"),
+  Data("Baby 1 ", "420.4", "116.75"),
 
 ];
   @override
@@ -35,7 +49,6 @@ List<MyApp>item=[
       ),
       body: Container(
          child: SingleChildScrollView(
-           physics: BouncingScrollPhysics(),
            child: Column(
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
@@ -331,7 +344,137 @@ Padding(
                    color: Colors.white,
                    borderRadius: BorderRadius.circular(20),
                  ),),
-               )
+               ),
+               SizedBox(height: 30,),
+               Container(
+                 height: 390,
+                 width: double.infinity,
+                 child: Padding(
+                   padding: const EdgeInsets.only( top: 20),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Center(
+                         child: Container(
+                           width: 75,
+                           height: 5,
+                           decoration: BoxDecoration(
+                             color: HexColor("#E9E9E9"),
+borderRadius: BorderRadius.circular(30),
+                           ),
+                         ),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 25,top: 20),
+                         child: Text("Price summary",style: TextStyle(
+                           fontSize: 24,
+                           fontWeight: FontWeight.bold,
+                         ),),
+                       ),
+                 Padding(
+                   padding: const EdgeInsets.only(top: 25),
+                   child: Row(
+                     children: [
+                       Padding(
+                         padding: const EdgeInsets.only(left: 25),
+                         child: Text("Passengers",style: TextStyle(
+                             fontSize: 12
+                         ),),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 91),
+                         child: Text("Rate",style: TextStyle(
+                             fontSize: 12
+                         ),),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 132),
+                         child: Text("Tax",style: TextStyle(
+                             fontSize: 12
+                         ),),
+                       ),
+
+                     ],
+                   ),
+                 ),
+                 SizedBox(height: 10,),
+                 Container(height:120,child: ListView.separated(physics: NeverScrollableScrollPhysics(),itemBuilder: (context, index) => BulidRow(data[index]),separatorBuilder: (context, index) => SizedBox(height: 10,),itemCount: data.length,))
+                      , SizedBox(height: 15,),
+                       Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 25),
+                         child: Container(height: 1,color: HexColor("#E9E9E9"),width: double.infinity,),
+                       )
+                       ,
+                       SizedBox(height: 15,),
+                       Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 25),
+                         child: Row(
+                           children: [
+                             Text("Total",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+                 ,Spacer(),
+                             Text("2192",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+
+                           ],
+                         ),
+                       ),
+                    SizedBox(height: 10,),
+                       Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 25),
+                         child: Row(
+                           children: [
+                             Text("Discount",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+                             ,Spacer(),
+                             Text("-192",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+
+                           ],
+                         ),
+                       ),
+                    SizedBox(height: 15,),
+                       Padding(
+                         padding: const EdgeInsets.symmetric(horizontal: 25),
+                         child: Container(height: 1,color: HexColor("#E9E9E9"),width: double.infinity,),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(right: 25,left: 25, top: 15),
+                         child: Row(
+                           children: [
+                             Text("Total Price",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+                             ,Spacer(),
+                             Text("2000 \$",style: TextStyle(
+                               fontSize: 18,
+                               fontWeight: FontWeight.bold,
+                             ),)
+
+                           ],
+                         ),
+                       ),
+
+                     ],
+                   ),
+                 ),
+                 decoration: BoxDecoration(
+                   color: Colors.white,
+
+borderRadius: BorderRadius.only(topLeft:  Radius.circular(30),topRight: Radius.circular(30)),
+
+                 ),
+               ),
+
              ],
            ),
          ),
@@ -366,5 +509,27 @@ Widget BulidItem(MyApp App)=>Padding(
   ),),
 
 );
+Widget BulidRow(Data data)=> Row(
+  children: [
+    Padding(
+      padding: const EdgeInsets.only(left: 25),
+      child: Text("${data.text1}",style: TextStyle(
+          fontSize: 12
+      ),),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(left: 110),
+      child: Text("${data.text2}",style: TextStyle(
+          fontSize: 12
+      ),),
+    ),
+    Padding(
+      padding: const EdgeInsets.only(left: 115,right: 25),
+      child: Text("${data.text3}",style: TextStyle(
+          fontSize: 12
+      ),),
+    ),
 
+  ],
+);
 }
