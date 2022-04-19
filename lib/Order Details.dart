@@ -347,7 +347,7 @@ Padding(
                ),
                SizedBox(height: 30,),
                Container(
-                 height: 390,
+                 height: 390 ,
                  width: double.infinity,
                  child: Padding(
                    padding: const EdgeInsets.only( top: 20),

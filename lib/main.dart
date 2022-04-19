@@ -1,28 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tourism/Order%20Details.dart';
-import 'package:tourism/faq.dart';
-import 'package:tourism/home.dart';
-import 'package:tourism/more.dart';
-import 'package:tourism/my_profile.dart';
-import 'package:tourism/packages.dart';
-import 'package:tourism/passenger.dart';
-import 'package:tourism/passengers%20_details.dart';
-import 'package:tourism/passengers_details.dart';
-import 'package:tourism/privacy_policy.dart';
-import 'package:tourism/refund_policy.dart';
-import 'package:tourism/register.dart';
-import 'package:tourism/result.dart';
-import 'package:tourism/success_page.dart';
-import 'package:tourism/success_page2.dart';
-import 'package:tourism/success_page3.dart';
-import 'package:tourism/terms_conditions.dart';
+import 'package:tourism/my_orders.dart';
+import 'package:tourism/order_details2.dart';
 
-import 'Settings.dart';
-import 'about_us.dart';
-import 'login.dart';
-import 'notifications.dart';
 
 void main(){
   runApp(MyApp());
@@ -47,7 +28,7 @@ statusBarColor: Colors.white.withOpacity(0),
 
     )
   ),
-  home:OrderDetails(),
+  home:MyOrders(),
 );
   }
 
