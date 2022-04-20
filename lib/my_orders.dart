@@ -171,153 +171,100 @@ body:  Container(
 
       ),
 
-      !value?   Container(
+      !value?   Column(
 
-        height:500 ,
+children: [
+  ListView.separated(shrinkWrap: true,physics: NeverScrollableScrollPhysics(),itemBuilder: (context, index) => Padding(
 
-        child: ListView.separated(shrinkWrap: true,physics: NeverScrollableScrollPhysics(),itemBuilder: (context, index) => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20),
 
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-
-          child: Stack(
+    child: Stack(
 
 
+
+      children: [
+
+
+
+        Container(
+
+          child: Column(
+
+            crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
 
+              SizedBox(height: 15,),
 
 
-              Container(
 
-                child: Column(
+              Padding(
 
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                padding: const EdgeInsets.only(left: 15),
+
+                child: Text('#123432832',style: TextStyle(
+
+                  fontSize: 12,
+
+                  color: HexColor("#606060"),
+
+                ),),
+
+              ),
+
+              SizedBox(height: 12,),
+
+              Padding(
+
+                padding: const EdgeInsets.only(left: 15),
+
+                child: Text('10/10/2022 | 20:55',style: TextStyle(
+
+                    fontSize: 12,
+
+                    color: Colors.black,
+
+                    fontWeight: FontWeight.bold
+
+                ),),
+
+              ),
+
+              SizedBox(height: 10,),
+
+              Padding(
+
+                padding: const EdgeInsets.only(left: 15),
+
+                child: Text('Company Name',style: TextStyle(
+
+                    fontSize: 14,
+
+                    color: Colors.black,
+
+                    fontWeight: FontWeight.bold
+
+                ),),
+
+              ),
+
+              Padding(
+
+                padding: const EdgeInsets.only(left: 15,top: 10),
+
+                child:   Row(
 
                   children: [
 
-                    SizedBox(height: 15,),
+                    Image(image: AssetImage("image/image62.png"),),
 
+                    SizedBox(width: 10,),
 
-
-                    Padding(
-
-                      padding: const EdgeInsets.only(left: 15),
-
-                      child: Text('#123432832',style: TextStyle(
-
-                        fontSize: 12,
-
-                        color: HexColor("#606060"),
-
-                      ),),
-
-                    ),
-
-                    SizedBox(height: 12,),
-
-                    Padding(
-
-                      padding: const EdgeInsets.only(left: 15),
-
-                      child: Text('10/10/2022 | 20:55',style: TextStyle(
-
-                          fontSize: 12,
-
-                          color: Colors.black,
-
-                          fontWeight: FontWeight.bold
-
-                      ),),
-
-                    ),
-
-                    SizedBox(height: 10,),
-
-                    Padding(
-
-                      padding: const EdgeInsets.only(left: 15),
-
-                      child: Text('Company Name',style: TextStyle(
-
-                          fontSize: 14,
-
-                          color: Colors.black,
-
-                          fontWeight: FontWeight.bold
-
-                      ),),
-
-                    ),
-
-                    Padding(
-
-                      padding: const EdgeInsets.only(left: 15,top: 10),
-
-                      child:   Row(
-
-                        children: [
-
-                          Image(image: AssetImage("image/image62.png"),),
-
-                          SizedBox(width: 10,),
-
-                          Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
-
-                        ],
-
-                      ),
-
-                    ),
+                    Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
 
                   ],
 
                 ),
-
-                height: 147,
-
-                width: double.infinity,
-
-                decoration: BoxDecoration(
-
-                  color: Colors.white,
-
-
-
-                  borderRadius: BorderRadius.circular(20),
-
-                ),
-
-              ),
-
-              Padding(
-
-                padding: const EdgeInsets.only(top: 15,left: 195),
-
-                child:   Container(height: 150,width: 110,decoration: BoxDecoration(
-
-                    borderRadius: BorderRadius.circular(10),
-
-                    image: DecorationImage(
-
-
-
-                        image:  AssetImage("image/image63.png"),
-
-                        fit: BoxFit.cover
-
-                    )
-
-                ),
-
-                ),
-
-              ),
-
-              Padding(
-
-                padding: const EdgeInsets.only(left: 320,top: 15),
-
-                child: Image(image: AssetImage("image/image61.png")),
 
               ),
 
@@ -325,7 +272,62 @@ body:  Container(
 
           ),
 
-        ),separatorBuilder: (context, index) => SizedBox(height: 15,),itemCount: 2,),
+          height: 147,
+
+          width: double.infinity,
+
+          decoration: BoxDecoration(
+
+            color: Colors.white,
+
+
+
+            borderRadius: BorderRadius.circular(20),
+
+          ),
+
+        ),
+
+        Padding(
+
+          padding: const EdgeInsets.only(top: 15,left: 195),
+
+          child:   Container(height: 150,width: 110,decoration: BoxDecoration(
+
+              borderRadius: BorderRadius.circular(10),
+
+              image: DecorationImage(
+
+
+
+                  image:  AssetImage("image/image63.png"),
+
+                  fit: BoxFit.cover
+
+              )
+
+          ),
+
+          ),
+
+        ),
+
+        Padding(
+
+          padding: const EdgeInsets.only(left: 320,top: 15),
+
+          child: Image(image: AssetImage("image/image61.png")),
+
+        ),
+
+      ],
+
+    ),
+
+  ),separatorBuilder: (context, index) => SizedBox(height: 15,),itemCount: 2,),
+
+
+],
 
       ):Container(),
 
