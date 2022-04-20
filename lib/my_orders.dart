@@ -32,461 +32,472 @@ bool value=false;
           child:   Container(
             height:220,
             width: MediaQuery.of(context).size.width,
-            color: HexColor("0C122C"),
+            decoration: BoxDecoration(
+                color: HexColor("0C122C"),
+
+                image: DecorationImage(
+
+                image: AssetImage("image/image1.png"),
+                  fit: BoxFit.cover
+              )
+            ),
 
           ),
         ),
 
       ),
 body:  Container(
-  child:   Column(
-
-    children: [
-
-      Padding(
-
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 25),
-
-        child:   Container(
-
-          child: Row(
-
-            children: [
-
-              SizedBox(width: 5,),
-
-              GestureDetector(
-
-                onTap: () {
-
-                  setState(() {
-
-                    value=true;
-
-                  });
-
-                },
-
-                child: Container(
-
-                  width: 155,
-
-                  height: 35,
-
-                  decoration: BoxDecoration(
-
-                    borderRadius: BorderRadius.circular(30,),
-
-                    color:value ?HexColor('#CBF6FF'):null,
-
-
-
-                  ),
-
-                  child: Center(
-
-                    child: Text("Present",style: TextStyle(
-
-                      color:  value? HexColor('#00BEE8'):Colors.black,
-
-
-
-                    ),),
-
-                  ),
-
-                ),
-
-              ),
-
-
-
-              SizedBox(width: 33,),
-
-
-
-              GestureDetector(
-
-                onTap: () {
-
-                  setState(() {
-
-                    value=false;
-
-                  });
-
-                },
-
-                child: Container(
-
-                  width: 155,
-
-                  height: 35,
-
-                  decoration: BoxDecoration(
-
-                    borderRadius: BorderRadius.circular(30,),
-
-                    color:!value ?HexColor('#CBF6FF'):null,
-
-
-
-                  ),
-
-                  child: Center(
-
-                    child: Text("Completed",style: TextStyle(
-
-                      color:  !value? HexColor('#00BEE8'):Colors.black,
-
-                    ),),
-
-                  ),
-
-                ),
-
-              ),
-
-
-
-            ],
-
-          ),
-
-          height: 45,
-
-          decoration: BoxDecoration(
-
-            borderRadius: BorderRadius.circular(50),
-
-            color: HexColor("#FFFFFF"),
-
-
-
-          ),
-
-          width: double.infinity,
-
-        ),
-
-      ),
-
-      !value?   Column(
-
-children: [
-  ListView.separated(shrinkWrap: true,physics: NeverScrollableScrollPhysics(),itemBuilder: (context, index) => Padding(
-
-    padding: const EdgeInsets.symmetric(horizontal: 20),
-
-    child: Stack(
-
-
+  child:   SingleChildScrollView(
+    physics:  BouncingScrollPhysics(),
+    child: Column(
 
       children: [
 
-
-
-        Container(
-
-          child: Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: [
-
-              SizedBox(height: 15,),
-
-
-
-              Padding(
-
-                padding: const EdgeInsets.only(left: 15),
-
-                child: Text('#123432832',style: TextStyle(
-
-                  fontSize: 12,
-
-                  color: HexColor("#606060"),
-
-                ),),
-
-              ),
-
-              SizedBox(height: 12,),
-
-              Padding(
-
-                padding: const EdgeInsets.only(left: 15),
-
-                child: Text('10/10/2022 | 20:55',style: TextStyle(
-
-                    fontSize: 12,
-
-                    color: Colors.black,
-
-                    fontWeight: FontWeight.bold
-
-                ),),
-
-              ),
-
-              SizedBox(height: 10,),
-
-              Padding(
-
-                padding: const EdgeInsets.only(left: 15),
-
-                child: Text('Company Name',style: TextStyle(
-
-                    fontSize: 14,
-
-                    color: Colors.black,
-
-                    fontWeight: FontWeight.bold
-
-                ),),
-
-              ),
-
-              Padding(
-
-                padding: const EdgeInsets.only(left: 15,top: 10),
-
-                child:   Row(
-
-                  children: [
-
-                    Image(image: AssetImage("image/image62.png"),),
-
-                    SizedBox(width: 10,),
-
-                    Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
-
-                  ],
-
-                ),
-
-              ),
-
-            ],
-
-          ),
-
-          height: 147,
-
-          width: double.infinity,
-
-          decoration: BoxDecoration(
-
-            color: Colors.white,
-
-
-
-            borderRadius: BorderRadius.circular(20),
-
-          ),
-
-        ),
-
         Padding(
 
-          padding: const EdgeInsets.only(top: 15,left: 195),
+          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 25),
 
-          child:   Container(height: 150,width: 110,decoration: BoxDecoration(
+          child:   Container(
 
-              borderRadius: BorderRadius.circular(10),
+            child: Row(
 
-              image: DecorationImage(
+              children: [
 
+                SizedBox(width: 5,),
 
+                GestureDetector(
 
-                  image:  AssetImage("image/image63.png"),
+                  onTap: () {
 
-                  fit: BoxFit.cover
+                    setState(() {
 
-              )
+                      value=true;
 
-          ),
+                    });
 
-          ),
+                  },
 
-        ),
+                  child: Container(
 
-        Padding(
+                    width: 155,
 
-          padding: const EdgeInsets.only(left: 320,top: 15),
+                    height: 35,
 
-          child: Image(image: AssetImage("image/image61.png")),
+                    decoration: BoxDecoration(
 
-        ),
+                      borderRadius: BorderRadius.circular(30,),
 
-      ],
+                      color:value ?HexColor('#CBF6FF'):null,
 
-    ),
 
-  ),separatorBuilder: (context, index) => SizedBox(height: 15,),itemCount: 2,),
 
+                    ),
 
-],
+                    child: Center(
 
-      ):Container(),
+                      child: Text("Present",style: TextStyle(
 
-      value?     Padding(
+                        color:  value? HexColor('#00BEE8'):Colors.black,
 
-        padding: const EdgeInsets.symmetric(horizontal: 20),
 
-        child: Stack(
 
-
-
-          children: [
-
-
-
-            Container(
-
-              child: Column(
-
-                crossAxisAlignment: CrossAxisAlignment.start,
-
-                children: [
-
-                  SizedBox(height: 15,),
-
-
-
-                  Padding(
-
-                    padding: const EdgeInsets.only(left: 15),
-
-                    child: Text('#123432832',style: TextStyle(
-
-                      fontSize: 12,
-
-                      color: HexColor("#606060"),
-
-                    ),),
-
-                  ),
-
-                  SizedBox(height: 12,),
-
-                  Padding(
-
-                    padding: const EdgeInsets.only(left: 15),
-
-                    child: Text('10/10/2022 | 20:55',style: TextStyle(
-
-                        fontSize: 12,
-
-                        color: Colors.black,
-
-                        fontWeight: FontWeight.bold
-
-                    ),),
-
-                  ),
-
-                  SizedBox(height: 10,),
-
-                  Padding(
-
-                    padding: const EdgeInsets.only(left: 15),
-
-                    child: Text('Compandy Name',style: TextStyle(
-
-                        fontSize: 14,
-
-                        color: Colors.black,
-
-                        fontWeight: FontWeight.bold
-
-                    ),),
-
-                  ),
-
-                  Padding(
-
-                    padding: const EdgeInsets.only(left: 15,top: 10),
-
-                    child:   Row(
-
-                      children: [
-
-                        Image(image: AssetImage("image/image62.png"),),
-
-                        SizedBox(width: 10,),
-
-                        Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
-
-                      ],
+                      ),),
 
                     ),
 
                   ),
 
-                ],
-
-              ),
-
-              height: 147,
-
-              width: double.infinity,
-
-              decoration: BoxDecoration(
-
-                color: Colors.white,
+                ),
 
 
 
-                borderRadius: BorderRadius.circular(20),
+                SizedBox(width: 33,),
 
-              ),
+
+
+                GestureDetector(
+
+                  onTap: () {
+
+                    setState(() {
+
+                      value=false;
+
+                    });
+
+                  },
+
+                  child: Container(
+
+                    width: 155,
+
+                    height: 35,
+
+                    decoration: BoxDecoration(
+
+                      borderRadius: BorderRadius.circular(30,),
+
+                      color:!value ?HexColor('#CBF6FF'):null,
+
+
+
+                    ),
+
+                    child: Center(
+
+                      child: Text("Completed",style: TextStyle(
+
+                        color:  !value? HexColor('#00BEE8'):Colors.black,
+
+                      ),),
+
+                    ),
+
+                  ),
+
+                ),
+
+
+
+              ],
 
             ),
 
-            Padding(
+            height: 45,
 
-              padding: const EdgeInsets.only(top: 15,left: 195),
+            decoration: BoxDecoration(
 
-              child:   Container(height: 150,width: 110,decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
 
-                  borderRadius: BorderRadius.circular(10),
-
-                  image: DecorationImage(
+              color: HexColor("#FFFFFF"),
 
 
-
-                      image:  AssetImage("image/image63.png"),
-
-                      fit: BoxFit.cover
-
-                  )
-
-              ),
-
-              ),
 
             ),
 
-            Padding(
+            width: double.infinity,
 
-              padding: const EdgeInsets.only(left: 320,top: 15),
-
-              child: Image(image: AssetImage("image/image61.png")),
-
-            ),
-
-          ],
+          ),
 
         ),
 
-      ):Container(),
+        !value?   Column(
+
+children: [
+    ListView.separated(shrinkWrap: true,physics: NeverScrollableScrollPhysics(),itemBuilder: (context, index) => Padding(
+
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+
+      child: Stack(
 
 
 
-    ],
+        children: [
 
+
+
+          Container(
+
+            child: Column(
+
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: [
+
+                SizedBox(height: 15,),
+
+
+
+                Padding(
+
+                  padding: const EdgeInsets.only(left: 15),
+
+                  child: Text('#123432832',style: TextStyle(
+
+                    fontSize: 12,
+
+                    color: HexColor("#606060"),
+
+                  ),),
+
+                ),
+
+                SizedBox(height: 12,),
+
+                Padding(
+
+                  padding: const EdgeInsets.only(left: 15),
+
+                  child: Text('10/10/2022 | 20:55',style: TextStyle(
+
+                      fontSize: 12,
+
+                      color: Colors.black,
+
+                      fontWeight: FontWeight.bold
+
+                  ),),
+
+                ),
+
+                SizedBox(height: 10,),
+
+                Padding(
+
+                  padding: const EdgeInsets.only(left: 15),
+
+                  child: Text('Company Name',style: TextStyle(
+
+                      fontSize: 14,
+
+                      color: Colors.black,
+
+                      fontWeight: FontWeight.bold
+
+                  ),),
+
+                ),
+
+                Padding(
+
+                  padding: const EdgeInsets.only(left: 15,top: 10),
+
+                  child:   Row(
+
+                    children: [
+
+                      Image(image: AssetImage("image/image62.png"),),
+
+                      SizedBox(width: 10,),
+
+                      Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
+
+                    ],
+
+                  ),
+
+                ),
+
+              ],
+
+            ),
+
+            height: 147,
+
+            width: double.infinity,
+
+            decoration: BoxDecoration(
+
+              color: Colors.white,
+
+
+
+              borderRadius: BorderRadius.circular(20),
+
+            ),
+
+          ),
+
+          Padding(
+
+            padding: const EdgeInsets.only(top: 15,left: 195),
+
+            child:   Container(height: 150,width: 110,decoration: BoxDecoration(
+
+                borderRadius: BorderRadius.circular(10),
+
+                image: DecorationImage(
+
+
+
+                    image:  AssetImage("image/image63.png"),
+
+                    fit: BoxFit.cover
+
+                )
+
+            ),
+
+            ),
+
+          ),
+
+          Padding(
+
+            padding: const EdgeInsets.only(left: 320,top: 15),
+
+            child: Image(image: AssetImage("image/image61.png")),
+
+          ),
+
+        ],
+
+      ),
+
+    ),separatorBuilder: (context, index) => SizedBox(height: 15,),itemCount: 5,),
+
+
+],
+
+        ):Container(),
+
+        value?     Padding(
+
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+
+          child: Stack(
+
+
+
+            children: [
+
+
+
+              Container(
+
+                child: Column(
+
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+
+                    SizedBox(height: 15,),
+
+
+
+                    Padding(
+
+                      padding: const EdgeInsets.only(left: 15),
+
+                      child: Text('#123432832',style: TextStyle(
+
+                        fontSize: 12,
+
+                        color: HexColor("#606060"),
+
+                      ),),
+
+                    ),
+
+                    SizedBox(height: 12,),
+
+                    Padding(
+
+                      padding: const EdgeInsets.only(left: 15),
+
+                      child: Text('10/10/2022 | 20:55',style: TextStyle(
+
+                          fontSize: 12,
+
+                          color: Colors.black,
+
+                          fontWeight: FontWeight.bold
+
+                      ),),
+
+                    ),
+
+                    SizedBox(height: 10,),
+
+                    Padding(
+
+                      padding: const EdgeInsets.only(left: 15),
+
+                      child: Text('Compandy Name',style: TextStyle(
+
+                          fontSize: 14,
+
+                          color: Colors.black,
+
+                          fontWeight: FontWeight.bold
+
+                      ),),
+
+                    ),
+
+                    Padding(
+
+                      padding: const EdgeInsets.only(left: 15,top: 10),
+
+                      child:   Row(
+
+                        children: [
+
+                          Image(image: AssetImage("image/image62.png"),),
+
+                          SizedBox(width: 10,),
+
+                          Text("\$12400",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)
+
+                        ],
+
+                      ),
+
+                    ),
+
+                  ],
+
+                ),
+
+                height: 147,
+
+                width: double.infinity,
+
+                decoration: BoxDecoration(
+
+                  color: Colors.white,
+
+
+
+                  borderRadius: BorderRadius.circular(20),
+
+                ),
+
+              ),
+
+              Padding(
+
+                padding: const EdgeInsets.only(top: 15,left: 195),
+
+                child:   Container(height: 150,width: 110,decoration: BoxDecoration(
+
+                    borderRadius: BorderRadius.circular(10),
+
+                    image: DecorationImage(
+
+
+
+                        image:  AssetImage("image/image63.png"),
+
+                        fit: BoxFit.cover
+
+                    )
+
+                ),
+
+                ),
+
+              ),
+
+              Padding(
+
+                padding: const EdgeInsets.only(left: 320,top: 15),
+
+                child: Image(image: AssetImage("image/image61.png")),
+
+              ),
+
+            ],
+
+          ),
+
+        ):Container(),
+
+
+
+      ],
+
+    ),
   ),
   decoration: BoxDecoration(
     image: DecorationImage(
